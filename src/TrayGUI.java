@@ -1,12 +1,15 @@
-/*
- * Creates the Tray Icon UI for interacting with the program
- */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Creates the Tray Icon UI for interacting with the program
+ * @author Justin Cagle
+ * @author jcagle2001@msn.com
+ * @version 1.0
+ */
 public class TrayGUI {
     private JPopupMenu menu;
     private TrayIcon icon;
@@ -39,18 +42,13 @@ public class TrayGUI {
         createComponents();
     }
 
-    /**
-     * Creates the icon image for the tray
-     * @return formatted icon image
-     */
+    // Creates the icon image for the tray
     private Image createImage(){
         return new ImageIcon(trayIconPath, "Stim").getImage();
     }
 
-    /**
-     * Heavy lifting for creating the UI. Creates and sets the components in the tray menu. Also adds event listeners
-     * to respond to menu selections.
-     */
+    // Heavy lifting for creating the UI. Creates and sets the components in the tray menu. Also adds event listeners
+    // to respond to menu selections.
     private void createComponents(){
         // Create menu components
         JMenu setInterval = new JMenu("Repeat Interval");
@@ -85,6 +83,7 @@ public class TrayGUI {
         menu.addSeparator();
         menu.add(exit);
 
+        // Add components to submenu
         intervalList.add(interval30sec);
         intervalList.add(interval45sec);
         intervalList.add(interval1min);
@@ -100,6 +99,7 @@ public class TrayGUI {
 
         initMenu();
 
+        // Create Event Listeners
         exit.addActionListener(e -> {
             isTimeToExit = true;
             sysTray.remove(icon);
@@ -141,12 +141,8 @@ public class TrayGUI {
         });
     }
 
-    /**
-     * Initializes the menu
-     */
+    // Initializes the menu
     private void initMenu(){
-
-
         try{
             sysTray.add(icon);
         } catch(AWTException awt){
@@ -154,14 +150,15 @@ public class TrayGUI {
         }
     }
 
+    /**
+     * Checks to see if it's time to clean up and exit the program loop
+     * @return Boolean
+     */
     public Boolean getIsTimeToExit(){
         return isTimeToExit;
     }
 
-    /**
-     * Deselects all Interval menu selections that are not the currently selected one
-     * @param selectedItem Item to remain selected
-     */
+    // Deselects all Interval menu selections that are not the currently selected one
     private void alterAllOtherStatesInterval(JCheckBoxMenuItem selectedItem){
         for(JCheckBoxMenuItem item : intervalList){
             item.setSelected(item.getText().equals(selectedItem.getText()));
@@ -169,10 +166,7 @@ public class TrayGUI {
         setIntervalOrFile(selectedItem);
     }
 
-    /**
-     * Deselects all Tone menu selections that are not the currently selected one
-     * @param selectedItem Item to remain selected
-     */
+    // Deselects all Tone menu selections that are not the currently selected one
     private void alterAllOtherStatesTone(JCheckBoxMenuItem selectedItem){
         for(JCheckBoxMenuItem item : toneList){
             item.setSelected(item.getText().equals(selectedItem.getText()));
@@ -180,10 +174,7 @@ public class TrayGUI {
         setIntervalOrFile(selectedItem);
     }
 
-    /**
-     * Sets parameters based on user selection
-     * @param selection selection to set.
-     */
+    // Sets parameters based on user selection
     private void setIntervalOrFile(JCheckBoxMenuItem selection){
         switch(selection.getText()){
             case "30 seconds"                  : interval = 30;                                 break;

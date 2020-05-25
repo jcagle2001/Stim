@@ -1,5 +1,8 @@
-/*
+/**
  * A simple timer to track how long it's been since we last played a tone
+ * @author Justin Cagle
+ * @author jcagle2001@msn.com
+ * @version 1.0
  */
 public class Timer {
     long startTime;
@@ -26,14 +29,6 @@ public class Timer {
      * @return amount of time since the timer was last started.
      */
     public long getElapsedTime() {
-        return calculateElapsedTime();
-    }
-
-    /**
-     * Private method that performs the elapsed time calculation
-     * @return a whole second representation of the elapsed time
-     */
-    private long calculateElapsedTime(){
         return elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
     }
 

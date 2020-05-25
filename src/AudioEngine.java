@@ -7,7 +7,13 @@ import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
-
+/**
+ * Self-contained audio engine to play an audio clip in the background
+ * @author Justin Cagle
+ * @author jcagle2001@msn.com
+ * @version 1.0
+ * {@link} https://www.geeksforgeeks.org/play-audio-file-using-java/
+ */
 public class AudioEngine {
     private static Clip clip;
 
@@ -15,7 +21,7 @@ public class AudioEngine {
     private static String status = "Not Initialized";
 
     AudioInputStream inputStream;
-    static String filePath = "StimShot.wav";
+    protected static String filePath = "StimShot.wav";
 
     /**
      * Constructor
