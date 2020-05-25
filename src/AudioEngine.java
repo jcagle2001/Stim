@@ -52,11 +52,7 @@ public class AudioEngine {
      * @return Boolean
      */
     public Boolean isDone(){
-        if(getClipPosition() == getClipLength()) {
-            return true;
-        }
-        else
-            return false;
+        return getClipPosition() == getClipLength();
     }
 
     /**

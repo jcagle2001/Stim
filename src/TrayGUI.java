@@ -164,11 +164,7 @@ public class TrayGUI {
      */
     private void alterAllOtherStatesInterval(JCheckBoxMenuItem selectedItem){
         for(JCheckBoxMenuItem item : intervalList){
-            if(!item.getText().equals(selectedItem.getText())){
-                item.setSelected(false);
-            } else {
-                item.setSelected(true);
-            }
+            item.setSelected(item.getText().equals(selectedItem.getText()));
         }
         setIntervalOrFile(selectedItem);
     }
@@ -179,11 +175,7 @@ public class TrayGUI {
      */
     private void alterAllOtherStatesTone(JCheckBoxMenuItem selectedItem){
         for(JCheckBoxMenuItem item : toneList){
-            if(!item.getText().equals(selectedItem.getText())){
-                item.setSelected(false);
-            } else {
-                item.setSelected(true);
-            }
+            item.setSelected(item.getText().equals(selectedItem.getText()));
         }
         setIntervalOrFile(selectedItem);
     }
