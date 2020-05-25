@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author Justin Cagle
  * @author jcagle2001@msn.com
  * @version 1.0
- * {@link} https://www.geeksforgeeks.org/play-audio-file-using-java/
+ * @see <a href="https://www.geeksforgeeks.org/play-audio-file-using-java/">https://www.geeksforgeeks.org/play-audio-file-using-java/</a>
  */
 public class AudioEngine {
     private static Clip clip;
