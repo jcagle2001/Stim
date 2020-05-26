@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Creates the Tray Icon UI for interacting with the program
  * @author Justin Cagle
- * @author jcagle2001@msn.com & wife
- * @version 1.0
+ * @author jcagle2001@msn.com & meggcagle@gmail.com
+ * @version 1.1
  */
 public class TrayGUI {
     private JPopupMenu menu;
