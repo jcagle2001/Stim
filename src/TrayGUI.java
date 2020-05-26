@@ -14,7 +14,7 @@ public class TrayGUI {
     private JPopupMenu menu;
     private TrayIcon icon;
     private SystemTray sysTray;
-    private final String trayIconPath = "Stim.png";
+    private final String trayIconPath = "STIMdefib.png";
     private Boolean isTimeToExit = false;
     private final List<JCheckBoxMenuItem> intervalList = new ArrayList<>();
     private final List<JCheckBoxMenuItem> toneList = new ArrayList<>();
