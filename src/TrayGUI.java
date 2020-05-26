@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Creates the Tray Icon UI for interacting with the program
  * @author Justin Cagle
- * @author jcagle2001@msn.com
+ * @author jcagle2001@msn.com & wife
  * @version 1.0
  */
 public class TrayGUI {
